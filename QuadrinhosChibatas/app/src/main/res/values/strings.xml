@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ChibatasComics</string>
+    <string name="choose_the_character">Choose the character</string>
+    <string name="character">Character</string>
+    <string name="list_comics">List Comics</string>
+    <string name="page_count">Page count:</string>
+    <string name="comic_title">Comic Title</string>
+    <string name="modified">Modified</string>
+    <string name="date_format">dd/MM/yyyy</string>
+    <string name="value">value</string>
+    <string name="character_thumbnail">Character Thumbnail</string>
+    <string name="comics_thumbnail">Comics Thumbnail</string>
 </resources>
