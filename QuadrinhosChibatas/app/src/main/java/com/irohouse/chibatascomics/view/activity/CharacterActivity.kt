@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.irohouse.chibatascomics.databinding.ActivityMainBinding
 import com.irohouse.chibatascomics.model.character.Character
 import com.irohouse.chibatascomics.model.character.ResponseMarvelApiCharacters
@@ -47,9 +48,16 @@ class CharacterActivity : AppCompatActivity() {
             val selectedItem: Character? = adapter.getItem(position)
             val intent = Intent(this@CharacterActivity, ListComicsActivity::class.java)
 
+            binding.apply {
+                if (selectedItem != null) {
+                    Glide.with(this@CharacterActivity)
+                        .load(selectedItem.thumbnail.fullPath())
+                        .into(binding.imgCaracterThumbnail)
+                }
+            }
+
             binding.buttonListComics.setOnClickListener {
                 intent.putExtra(CHARACTER_KEY, selectedItem)
-                Log.i("ITEMSELECIONADO", selectedItem.toString())
                 startActivity(intent)
             }
         }

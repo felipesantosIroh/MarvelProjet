@@ -3,6 +3,7 @@ package com.irohouse.chibatascomics.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.irohouse.chibatascomics.databinding.ListComicsBinding
 import com.irohouse.chibatascomics.model.comic.Comic
 
@@ -19,6 +20,9 @@ class ListComicsAdapter (
             itemView.setOnClickListener{
                 onClickComic(comic)
             }
+            Glide.with(itemView)
+                .load(comic.thumbnail.fullPath())
+                .into(imgComicsThumbnailList)
         }
     }
 
@@ -37,6 +41,5 @@ class ListComicsAdapter (
     override fun getItemCount(): Int {
         return comics.size
     }
-
 
 }

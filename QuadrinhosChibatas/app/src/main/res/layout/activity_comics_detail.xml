@@ -32,11 +32,26 @@
                 android:contentDescription="@string/comics_thumbnail"
                 android:src="@mipmap/ic_launcher"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/creator_list"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleListCreator"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:background="@drawable/border_list"
+                android:padding="5dp"
+                tools:listitem="@layout/list_creator"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="40dp"/>
 

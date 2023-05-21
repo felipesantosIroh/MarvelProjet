@@ -6,6 +6,5 @@ class ComicBusiness {
     private val repo by lazy {
         ComicRepository()
     }
-
     suspend fun getComics(characterId: Int) = repo.getComics(characterId)
 }

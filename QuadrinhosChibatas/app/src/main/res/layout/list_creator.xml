@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/border_list"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/textRoleCreator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/role"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/textNameCreator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="@string/name"/>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -10,4 +10,7 @@
     <string name="value">value</string>
     <string name="character_thumbnail">Character Thumbnail</string>
     <string name="comics_thumbnail">Comics Thumbnail</string>
+    <string name="role">Role</string>
+    <string name="name">Name</string>
+    <string name="creator_list">Creator List</string>
 </resources>
