@@ -5,37 +5,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.ListComics">
+    tools:context=".view.activity.ListComicsActivity">
 
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.appbar.AppBarLayout
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary">
 
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/swipRefreshListComics"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycleListComics"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/choose_the_character"
+                        android:textColor="@color/colorLight"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
 
+            </com.google.android.material.appbar.MaterialToolbar>
 
-        </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
-    </androidx.core.widget.NestedScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleListComics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_comics" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

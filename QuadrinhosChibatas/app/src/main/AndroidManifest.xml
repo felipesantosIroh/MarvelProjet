@@ -18,13 +18,13 @@
         android:theme="@style/Theme.ChibatasComics"
         tools:targetApi="31">
         <activity
-            android:name=".view.activity.ComicsDetail"
+            android:name=".view.activity.ComicsDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.ListComics"
+            android:name=".view.activity.ListComicsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.MainActivity"
+            android:name=".view.activity.CharacterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
