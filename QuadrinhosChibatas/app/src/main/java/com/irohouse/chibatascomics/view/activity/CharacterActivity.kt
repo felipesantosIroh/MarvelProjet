@@ -1,10 +1,9 @@
 package com.irohouse.chibatascomics.view.activity
 
-import android.R
+import android.R.layout.simple_list_item_1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -22,11 +21,13 @@ class CharacterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Choose the character"
         initComponents()
     }
 
     private fun initComponents() {
-        viewModel = ViewModelProvider(this).get(CharacterViewModel::class.java)
+        viewModel = ViewModelProvider(this)[CharacterViewModel::class.java]
         viewModel.getCharacters()
         setupObservers()
     }
@@ -41,7 +42,7 @@ class CharacterActivity : AppCompatActivity() {
 
     private fun configureAdapter(it: ResponseMarvelApiCharacters) {
         val listCharacter: List<Character> = it.data.results
-        val adapter = ArrayAdapter<Character>(this@CharacterActivity, R.layout.simple_list_item_1, listCharacter)
+        val adapter = ArrayAdapter<Character>(this@CharacterActivity, simple_list_item_1, listCharacter)
         binding.autoCompleteNameCharacter.setAdapter(adapter)
 
         binding.autoCompleteNameCharacter.setOnItemClickListener {_, _, position, _ ->

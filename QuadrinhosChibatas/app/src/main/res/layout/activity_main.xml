@@ -18,99 +18,51 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@color/colorPrimary">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/choose_the_character"
-                            android:textColor="@color/colorLight"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-
-                </androidx.appcompat.widget.Toolbar>
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-                <LinearLayout
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/autoCompleteNameCharacter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp">
+                    android:textAlignment="center"
+                    android:hint="@string/character"
+                    android:textColorHint="@color/colorLight"
+                    android:textColor="@color/colorPrimary"
+                    android:inputType="none"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:text="@string/character"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:textColor="@color/colorPrimary"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                            android:id="@+id/autoCompleteNameCharacter"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAlignment="center"
-                            android:singleLine="true"
-                            android:inputType="none"/>
 
-                    </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:id="@+id/imgCaracterThumbnail"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:contentDescription="@string/character_thumbnail"/>
 
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imgCaracterThumbnail"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:src="@mipmap/ic_launcher_round"
-                    android:contentDescription="@string/character_thumbnail"/>
-
-                <Button
-                    android:id="@+id/buttonListComics"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="@string/list_comics"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorLight"/>
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/buttonListComics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="@string/list_comics"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorLight"/>
 
         </LinearLayout>
+
 
     </androidx.core.widget.NestedScrollView>
 

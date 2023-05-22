@@ -12,6 +12,6 @@ interface MarvelApi {
     @GET("characters/{characterId}/comics")
     suspend fun comics(@Path("characterId") characterId: Int): Response<ResponseMarvelApiComics>
 
-    @GET("characters")
+    @GET("characters?limit=100")
     suspend fun characters(@Query("orderBy") orderBy: String = "name"): Response<ResponseMarvelApiCharacters>
 }

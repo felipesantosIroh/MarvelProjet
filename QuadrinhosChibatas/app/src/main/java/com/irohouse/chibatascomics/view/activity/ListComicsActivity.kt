@@ -21,11 +21,13 @@ class ListComicsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListComicsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "List Comics"
         initComponents()
     }
 
     private fun initComponents() {
-        viewModel = ViewModelProvider(this).get(ListComicsViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ListComicsViewModel::class.java]
         val character = intent.getParcelableExtra<Character>(CHARACTER_KEY)
         if (character != null) {
             viewModel.getComics(character.id)

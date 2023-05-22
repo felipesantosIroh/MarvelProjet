@@ -16,11 +16,12 @@ class ComicsDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityComicsDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Comics Detail"
         initComponents()
     }
 
     private fun initComponents() {
-        //viewModel = ViewModelProvider(this).get(ComicsDetailViewModel::class.java)
         val comic = intent.getParcelableExtra<Comic>(COMIC_KEY)
         if (comic != null) {
             configureAdapter(comic)
